@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Stok Yönetimi - Java Spring Boot Projesi
 
 Bu proje, Java ileri seviye konularını kapsayan, hızlıca deploy edilebilen basit bir stok yönetimi uygulamasıdır.
