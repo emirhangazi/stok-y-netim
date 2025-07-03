@@ -1,10 +1,9 @@
-<<<<<<< HEAD
-FROM eclipse-temurin:17-jdk-alpine
-VOLUME /tmp
-COPY target/stok-yonetim-1.0.0.jar app.jar
-=======
-FROM eclipse-temurin:17-jdk-alpine
-VOLUME /tmp
-COPY target/stok-yonetim-1.0.0.jar app.jar
->>>>>>> f2aa8e62457412b03465e858e3f3d8701e91f936
-ENTRYPOINT ["java","-jar","/app.jar"] 
+FROM maven:3.9.6-eclipse-temurin-17 AS build
+WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
+
+FROM eclipse-temurin:17-jre
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
