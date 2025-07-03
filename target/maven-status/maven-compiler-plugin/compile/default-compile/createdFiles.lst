@@ -1,0 +1,9 @@
+com\example\stokyonetim\util\GenericPrinter.class
+com\example\stokyonetim\repository\UrunRepository.class
+com\example\stokyonetim\config\StartupRunner.class
+com\example\stokyonetim\algorithm\AramaAlgoritmalari.class
+com\example\stokyonetim\model\Urun.class
+com\example\stokyonetim\controller\UrunController.class
+com\example\stokyonetim\StokYonetimApplication.class
+com\example\stokyonetim\model\Urun$UrunBuilder.class
+com\example\stokyonetim\service\UrunService.class

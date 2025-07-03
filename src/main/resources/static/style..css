@@ -1,0 +1,59 @@
+body {
+    background: #f4f6fa;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 32px;
+}
+form {
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    max-width: 400px;
+    margin: 24px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+input, button {
+    margin: 4px 0;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+button {
+    background: #2ecc71;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:hover {
+    background: #27ae60;
+}
+ul#urunListesi {
+    max-width: 400px;
+    margin: 24px auto;
+    padding: 0;
+    list-style: none;
+}
+ul#urunListesi li {
+    background: #fff;
+    margin-bottom: 8px;
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    font-size: 1.05em;
+}
+h2 {
+    text-align: center;
+    color: #34495e;
+    margin-top: 16px;
+}
+div {
+    margin-bottom: 16px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Stok Yönetimi</title>
+</head>
+<body>
+<h1>Stok Yönetimi</h1>
+<div>
+    <h2>Ürün Ekle</h2>
+    <form id="urunForm">
+        Ad: <input type="text" id="ad" required>
+        Stok: <input type="number" id="stok" required>
+        Fiyat: <input type="number" id="fiyat" step="0.01" required>
+        <button type="submit">Ekle</button>
+    </form>
+</div>
+<hr>
+<div>
+    <h2>Ürünler</h2>
+    <ul id="urunListesi"></ul>
+</div>
+<script>
+    function urunleriGetir() {
+        fetch('/api/urunler')
+            .then(r => r.json())
+            .then(data => {
+                const ul = document.getElementById('urunListesi');
+                ul.innerHTML = '';
+                data.forEach(u => {
+                    ul.innerHTML += `<li>${u.ad} | Stok: ${u.stokMiktari} | Fiyat: ${u.fiyat}</li>`;
+                });
+            });
+    }
+    document.getElementById('urunForm').onsubmit = function(e) {
+        e.preventDefault();
+        fetch('/api/urunler', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                ad: document.getElementById('ad').value,
+                stokMiktari: document.getElementById('stok').value,
+                fiyat: document.getElementById('fiyat').value
+            })
+        }).then(() => {
+            urunleriGetir();
+            document.getElementById('urunForm').reset();
+        });
+    };
+    urunleriGetir();
+</script>
+</body>
+</html> 
